@@ -1,0 +1,28 @@
+<hr>
+<div class="titulo">
+    <h1>PRODUCTOS</h1>
+</div>
+<hr>
+<div class="banner">
+    <img (click)="banner()" src="../img/banner4.jpg" class="img-fluid" alt="Img...">
+</div>
+<hr>
+<div class="container">
+    <div class="row">
+        <div *ngFor="let producto of productos; let i = index" class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                <img src="../../../img/{{producto.nombre}}_1.png" class="d-block w-100" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title titulo-card">{{ producto.nombre }}</h5>
+                    <p class="card-text precio">Precio: {{ producto.precio | currency }}</p>
+                    <p class="card-title desc">{{ producto.descripcion.length > 110 ? producto.descripcion.slice(0, 110)
+                        + '...' :
+                        producto.descripcion }}</p>
+                    <button (click)="detalle(producto.idproducto)" type="button" class="btn btn-outline-dark boton">Ver
+                        producto</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<hr>

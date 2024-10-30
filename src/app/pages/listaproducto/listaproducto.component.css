@@ -1,0 +1,63 @@
+.titulo {
+    text-align: center;
+    margin-bottom: 20px;
+    text-decoration: underline;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.banner img {
+    max-width: 100%;
+    height: auto;
+    height: 400px;
+    width: 100%;
+}
+
+/* Tarjetas */
+.card {
+    flex: 1 1 calc(25% - 2rem); /*Las tarjetas ocupan aproximadamente el 25% del ancho del contenedor*/ 
+    max-width: 18rem;       
+    margin: 0.5rem;
+    background-color: #ace985;
+    border: solid;
+    border-width: 5px;
+    border-color: rgb(234, 210, 138);
+  }
+  
+  .card img {
+    max-width: 100%;
+    height: auto;                
+  }
+  
+  /* Botón dentro de la tarjeta */
+  .boton{
+    display: block;
+    width: 100%;                 /* El botón ocupa el 100% del ancho del contenedor padre */
+    text-align: center;
+    background-color: #ffffff8c;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+  .boton:hover{
+    background-color: #00030533;
+  }
+
+  .card img {
+    height: 200px;            
+    object-fit: cover;           /* Corta la imagen para que ocupe el contenedor, manteniendo su proporción */
+  }
+
+  .desc{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    text-align: justify;
+  }
+
+  .precio{
+    font-size: 20px;
+    font-weight: 400;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+  .titulo-card{
+    font-size: 20px;
+    font-weight: 700; 
+  }

@@ -1,0 +1,64 @@
+<hr>
+<div class="contenerdor">
+    <div class="titulo">
+        <h1> Modificar Producto</h1>
+    </div>
+    <hr>
+    <form autocomplete="off" (ngSubmit)="guardar(forma)" #forma="ngForm">
+        <div class="caja">
+            <img class="mini-img" src="../../../img/{{productoModel.nombre}}_1.png" alt="IMG1...">
+            <img class="mini-img" src="../../../img/{{productoModel.nombre}}_2.png" alt="IMG2...">
+            <img class="mini-img" src="../../../img/{{productoModel.nombre}}_3.png" alt="IMG3...">
+            <!-- Nombre-->
+            <div class="form-group row">
+                <label class="col-2 col-form-label">Nombre:</label>
+                <div class="col-8">
+                    <input class="form-control" type="text" name="nombre" placeholder="Nombre..."
+                        [class.is-invalid]="nombre.invalid && nombre.touched" [(ngModel)]="productoModel.nombre"
+                        required minlength="4" #nombre="ngModel" s />
+                    <small *ngIf="nombre.invalid && nombre.touched" class="form-text text-danger">Ingrese nombre del
+                        producto</small>
+                </div>
+            </div>
+            <!-- Precio -->
+            <div class="form-group row">
+                <label class="col-2 col-form-label">Precio:</label>
+                <div class="col-8">
+                    <input class="form-control" type="number" name="precio" placeholder="Precio Unitario"
+                        [class.is-invalid]="precio.invalid && precio.touched" [(ngModel)]="productoModel.precio"
+                        required min="1" #precio="ngModel" />
+                    <small *ngIf="precio.invalid && precio.touched" class="form-text text-danger">ingrese el
+                        Precio</small>
+                </div>
+            </div>
+            <!-- Stock-->
+            <div class="form-group row">
+                <label class="col-2 col-form-label">Stock:</label>
+                <div class="col-8">
+                    <input class="form-control" type="number" name="stock" placeholder="Stock"
+                        [class.is-invalid]="stock.invalid && stock.touched" [(ngModel)]="productoModel.stock" required
+                        min="1" #stock="ngModel" />
+                    <small *ngIf="stock.invalid && stock.touched" class="form-text text-danger">Ingrese el Stock</small>
+                </div>
+            </div>
+            <!-- Descrip-->
+            <div class="form-group row">
+                <label class="col-2 col-form-label">Descripcion:</label>
+                <div class="col-8">
+                    <input class="form-control" type="text" name="descrip" placeholder="Descripcion del Producto"
+                        [class.is-invalid]="descrip.invalid && descrip.touched" [(ngModel)]="productoModel.descripcion"
+                        required minlength="7" #descrip="ngModel" />
+                    <small *ngIf="descrip.invalid && descrip.touched" class="form-text text-danger">Ingrese una
+                        descripcion</small>
+                </div>
+            </div>
+
+        </div>
+        <div class="form-group row">
+            <label></label>
+            <div class="input-group col-md-8">
+                <button type="submit" class="btn btn-warning">Guardar</button>
+            </div>
+        </div>
+    </form>
+</div>

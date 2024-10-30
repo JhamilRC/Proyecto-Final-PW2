@@ -1,0 +1,60 @@
+<div class="container">
+    <div class="titulo">
+        <h1>Nuevo Producto</h1>
+    </div>
+    <hr />
+    <form autocomplete="off" (ngSubmit)="guardar(forma)" #forma="ngForm">
+        <div class="caja">
+            <img src="../img/banner7.jpg" alt="banner" />
+
+            <!-- Nombre-->
+            <div class="form-group row">
+                <label class="col-2 col-form-label">Nombre:</label>
+                <div class="col-8">
+                    <input class="form-control" type="text" name="nombre" placeholder="Nombre..."
+                        [(ngModel)]="productoModel.nombre" required minlength="4" #nombre="ngModel" />
+                    <small *ngIf="nombre.invalid && nombre.touched" class="form-text text-danger">Ingrese nombre del
+                        producto</small>
+                </div>
+            </div>
+
+            <!-- Precio -->
+            <div class="form-group row">
+                <label class="col-2 col-form-label">Precio:</label>
+                <div class="col-8">
+                    <input class="form-control" type="number" name="precio" placeholder="Precio Unitario"
+                        [(ngModel)]="productoModel.precio" required min="1" #precio="ngModel" />
+                    <small *ngIf="precio.invalid && precio.touched" class="form-text text-danger">Ingrese el
+                        precio</small>
+                </div>
+            </div>
+
+            <!-- Stock-->
+            <div class="form-group row">
+                <label class="col-2 col-form-label">Stock:</label>
+                <div class="col-8">
+                    <input class="form-control" type="number" name="stock" placeholder="Stock"
+                        [(ngModel)]="productoModel.stock" required min="1" #stock="ngModel" />
+                    <small *ngIf="stock.invalid && stock.touched" class="form-text text-danger">Ingrese el stock</small>
+                </div>
+            </div>
+
+            <!-- Descripción-->
+            <div class="form-group row">
+                <label class="col-2 col-form-label">Descripción:</label>
+                <div class="col-8">
+                    <input class="form-control" type="text" name="descripcion" placeholder="Descripción del Producto"
+                        [(ngModel)]="productoModel.descripcion" required minlength="7" #descripcion="ngModel" />
+                    <small *ngIf="descripcion.invalid && descripcion.touched" class="form-text text-danger">Ingrese una
+                        descripción</small>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="input-group col-md-8">
+                    <button type="submit" class="btn btn-success">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

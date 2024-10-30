@@ -1,0 +1,61 @@
+<h1>{{ producto.nombre }}</h1>
+<hr>
+<div class="row fadeIn fast">
+    <div class="col-md-4">
+        <img [src]="imagenPrincipal" class="img-fluid imagen-principal" alt="">
+        <!-- <img src="../../../img/{{producto.nombre}}_1.png" class="img-fluid imagen-principal" alt=""> -->
+        <br><br>
+        <a href="http://localhost:4200/listarproductos" class="btn btn-outline-danger btn-block boton">Regresar</a>
+        <a (click)="comprar()" class="btn btn-outline-success boton">Comprar</a>
+    </div>
+    <div class="col-md-8">
+        <h3>{{ producto.nombre }}</h3>
+        <p class="precio">{{ producto.precio | currency }}</p>
+        <hr>
+
+        <h5>Elige tu diseño favorito</h5>
+        <div>
+            <img [attr.src]="'../../../img/' + producto.nombre + '_1.png'" alt="" class="mini-img"
+                (mouseover)="cambiarImagenPrincipal('../../../img/' + producto.nombre + '_1.png')">
+            <img [attr.src]="'../../../img/' + producto.nombre + '_2.png'" alt="" class="mini-img"
+                (mouseover)="cambiarImagenPrincipal('../../../img/' + producto.nombre + '_2.png')">
+            <img [attr.src]="'../../../img/' + producto.nombre + '_3.png'" alt="" class="mini-img"
+                (mouseover)="cambiarImagenPrincipal('../../../img/' + producto.nombre + '_3.png')">
+        </div>
+        <hr>
+        <h5>Tallas disponibles</h5>
+        <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+            <label class="btn btn-outline-dark" for="btnradio1">EU 38.5</label>
+
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+            <label class="btn btn-outline-dark" for="btnradio2">EU 39</label>
+
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+            <label class="btn btn-outline-dark" for="btnradio3">EU 39.5</label>
+
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off">
+            <label class="btn btn-outline-dark" for="btnradio4">EU 40</label>
+
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio5" autocomplete="off">
+            <label class="btn btn-outline-dark" for="btnradio5">EU 40.5</label>
+
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio6" autocomplete="off">
+            <label class="btn btn-outline-dark" for="btnradio6">EU 41</label>
+
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio7" autocomplete="off">
+            <label class="btn btn-outline-dark botonprueba" for="btnradio7">EU 41.5</label>
+        </div>
+        <hr>
+        <div>
+            <h5>Descripción</h5>
+            <p class="desc">{{ producto.descripcion }}</p>
+        </div>
+        <hr>
+        <div>
+            <h5>Disponibilidad</h5>
+            <p class="desc">{{ producto.stock }} unidades</p>
+        </div>
+    </div>
+</div>
+<hr>

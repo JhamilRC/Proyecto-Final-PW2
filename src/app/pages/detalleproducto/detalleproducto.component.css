@@ -1,0 +1,37 @@
+.imagen-principal{
+    height: 650px;
+    border-radius: 10px;
+    border: solid;
+    border-color: rgb(82, 86, 90);
+    border-width: 2px;
+}
+
+
+.boton{
+    margin: 20px;
+}
+
+.precio{
+    font-size: 50px;
+}
+
+.mini-img {
+    width: 110px;
+    margin: 10px;
+    border-radius: 10px;
+    border: solid;
+    border-width: 2px;
+    border-color: rgb(82, 86, 90);
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.mini-img:hover{
+    transform: scale(1.1);
+}
+
+.desc{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    margin-right: 20%;
+    text-align: justify;
+}
